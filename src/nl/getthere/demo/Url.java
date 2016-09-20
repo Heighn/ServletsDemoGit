@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/url")
+@WebServlet("/url/*")
 public class Url extends HttpServlet {
 
 	/**
@@ -33,6 +33,7 @@ public class Url extends HttpServlet {
 		out.print("    This is ");
 		out.print(this.getClass());
 		out.println(", using the GET method");
+		out.print(request.getRequestURL().toString());
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
